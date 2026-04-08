@@ -25,12 +25,12 @@ public class MaximizeSumOfArray {
 		int [] nums3 = {5,6,9,-3,3};
 		k = 2;
 		maxSum = largestSumAfterKNegations(nums3  , k);
-		System.out.println(maxSum); // 26
+		System.out.println(maxSum); // 20
 		
 		int [] nums4 = {-4,-2,-3};
 		k = 4;
 		 maxSum = largestSumAfterKNegations(nums4  , k);
-		System.out.println(maxSum); // 7
+		System.out.println(maxSum); // 5
 		
 		
 		
@@ -66,7 +66,7 @@ public class MaximizeSumOfArray {
 //			
 //		}
 		
-		if( k%2 > 0) {
+		if( k%2 == 1) {
 			maxSum -= (2 * min);
 		}
 
