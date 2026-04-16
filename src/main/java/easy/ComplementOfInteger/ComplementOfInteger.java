@@ -18,16 +18,17 @@ public class ComplementOfInteger {
 
 	}
 
-	
+
 public static int bitwiseComplement(int n) {
 	
 	//System.out.println(~n);
-	
+	//if zero input 
 	if(n == 0 ) return 1;
-	
+	//create mask
 	int mask = Integer.highestOneBit(n) *2 -1;
-	
+	//return mask XOR n
 		return  n ^ mask ;
         
     }
+	
 }
