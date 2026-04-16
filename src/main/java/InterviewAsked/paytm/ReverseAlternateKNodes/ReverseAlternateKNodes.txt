@@ -1,0 +1,28 @@
+https://www.naukri.com/code360/interview-experiences/one97-communication-limited/interview-experience-mar-2022-exp-0-2-years-2-2333?cvId=8e82457090a54652ae15f5c445614eca&campaign=interview_exp_dashboard&medium=desktop&source=naukri
+1. Reverse Alternate K nodes
+Easy
+10m average time
+90% success
+0/40
+
+You are given a Singly Linked List of integers and a positive integer 'K'. Modify the linked list by reversing 
+every alternate 'K' nodes of the linked list.
+A singly linked list is a type of linked list that is unidirectional, that is, it can be traversed in only one 
+direction from head to the last node (tail).
+Note:
+If the number of nodes in the list or in the last group is less than 'K', just reverse the remaining nodes. 
+Example:
+Linked list: 5 6 7 8 9 10 11 12
+K: 3 
+
+Output: 7 6 5 8 9 10 12 11
+
+We reverse the first 'K' (3) nodes and then skip the next 'K'(3) nodes. Now, since the number of nodes 
+remaining in the list (2) is less than 'K', we just reverse the remaining nodes (11 and 12). 
+Note:
+You need to reverse the first 'K' nodes and then skip the 'K' nodes and so on. 5 6 7 10 9 8 11 12 is not the 
+correct answer for the given linked list. 
+Problem approach
+Firstly, push the k elements of the linked list in the stack. Now pop elements one by one and keep track of 
+the previously popped node. Point the next pointer of prev node to top element of stack. Repeat this 
+process, until NULL is reached.

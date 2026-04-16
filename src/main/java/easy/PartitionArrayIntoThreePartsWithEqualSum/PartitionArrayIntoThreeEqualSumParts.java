@@ -27,7 +27,7 @@ public class PartitionArrayIntoThreeEqualSumParts {
 		start = System.nanoTime();
 		int [] arr3 = {0, 0, 0, 0};
 		 ifEqual = canThreePartsEqualSum(arr3);
-		System.out.println(ifEqual); //false
+		System.out.println(ifEqual); //true
 		System.out.println(System.nanoTime() - start);
 		
 //		int [] arr4 = {3,-3,0};
@@ -35,33 +35,77 @@ public class PartitionArrayIntoThreeEqualSumParts {
 //		System.out.println(ifEqual); //false
 
 	}
+
+	private static boolean canThreePartsEqualSum(int[] arr) {
+		//find total
+		int total = 0;
+		for(int a : arr) {
+			total += a;		
+		}
+		
+		// total%3 != 0 return false
+		
+		if(total%3 !=0)
+			return false;
+		
+		//calculate target sum
+		int target = total/3;
+		
+		//count = 0
+		int count = 0;
+		
+		//currntSum
+		
+		int currentSum = 0;
+		
+		//loop till length-1
+		for(int i = 0; i < arr.length-1; i++) {
+			
+			// calculate sum
+			currentSum += arr[i];
+			
+			//if sum == target -> count++ -> sum = 0
+			if(currentSum == target) {
+				currentSum = 0;
+				count++;				
+			}
+			//if count == 2 -> return true
+			
+			if(count == 2)
+				return true;			
+			//loop ends			
+		}
+		
+		//return true if count == 3 else false;		
+		return count ==3? true : false;
+	}
 	
-    public static boolean canThreePartsEqualSum(int[] arr) {
-    	
-    	//int total = Arrays.stream(arr).sum(); // in LeetCode speed is 5ms
-    	int total = 0;
-    	// this improved the time complexity  speed from 5ms to 1ms
-    	for(int i = 0; i < arr.length; i++) 
-    		total += arr[i];
-    	if (total%3 != 0)
-    		return false;
-    	
-    	int target = total/3;
-    	int currentSum = 0;
-    	int count = 0;    	
-    	
-    for(int i = 0; i < arr.length-1; i++) {    	
-    		
-    	currentSum += arr[i];    	
-    	if(currentSum ==  target) {    		
-    		currentSum = 0;
-    		count ++;    		
-    	}    		
-    	if(count == 2)
-    		return true; // this is to take care of [0,0,0,0] -> true
-    }    	    	
-    	return count == 3?  true: false;
-        
-    }
+//    public static boolean canThreePartsEqualSum(int[] arr) {
+//    	
+//    	//int total = Arrays.stream(arr).sum(); // in LeetCode speed is 5ms
+//    	int total = 0;
+//    	// this improved the time complexity  speed from 5ms to 1ms
+//    	for(int i = 0; i < arr.length; i++) 
+//    		total += arr[i];
+//    	if (total%3 != 0)
+//    		return false;
+//    	
+//    	int target = total/3;
+//    	int currentSum = 0;
+//    	int count = 0;    	
+//    	
+//    for(int i = 0; i < arr.length-1; i++) {    	
+//    		
+//    	currentSum += arr[i];    	
+//    	if(currentSum ==  target) {    		
+//    		currentSum = 0;
+//    		count ++;    		
+//    	}    		
+//    	if(count == 2)
+//    		return true; // this is to take care of [0,0,0,0] -> true
+//    }    	    	
+//    	return count == 3?  true: false;
+//        
+//    }
 
 }
