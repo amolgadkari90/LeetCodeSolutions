@@ -4,27 +4,23 @@ public class DeleteElementDLL {
 	
 	public DLLNode deleteMiddleElementDLL(DLLNode head,  int value){
 		
-		DLLNode temp = head;
-		DLLNode prev = null;
-		boolean ifFound = false;
-		
-		while(temp != null) {		
-			prev = temp.prev;
-			if(temp.value == value ) {		
-				ifFound = true;
-				temp.prev.next = temp.next;
-				temp.next.prev =temp.prev;
-				temp = temp.prev;
-				temp.prev = null;
-				temp.next = null;					
-			}			
-			temp = temp.next;
+		DLLNode current = head;
+		DLLNode  fast = head.next;
+		DLLNode slow = head.prev;
+				
+		while(current != null) {		
+			fast =  current.next;
+			slow = current.prev;
+			if(current.value == value ) {		
+				slow.next = fast;
+				fast.prev = slow;	
+				current.next = null;
+				current.prev = null;
+			}	
+			current = fast;
 		}
-		
-		if(!ifFound) {
-			System.out.println("Element not found");
-		}		
-		return prev;
+			
+		return slow;
 	}
 
 }
