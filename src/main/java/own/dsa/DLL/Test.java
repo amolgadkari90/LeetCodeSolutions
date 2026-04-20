@@ -39,7 +39,7 @@ public class Test {
 				value = 555;
 				tail = delete.deleteMiddleElementDLL(head, value);
 				System.out.println("Deleted in middel " + tail);
-				print.printReverseDLL(tail);
+				print.printForwardDLL(head);
 
 	}
 
