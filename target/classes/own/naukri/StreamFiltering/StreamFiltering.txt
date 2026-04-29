@@ -1,0 +1,11 @@
+Java Developer
+Cognizant Technology Private Ltd
+
+2. Stream Filtering
+Given a Student class and a list of students, write a Java 8 program to filter students with roll numbers 
+greater than 50, concatenate their first and last names, and return the result.
+
+1. create class student => fields => rollNumber, firstName, lastName => 
+no Arug Constructor + allArug Constructor + getters + setters
+2. add students 
+3. stream the list => add filter => create a list of rollNumber and Name (concatenated)

@@ -1,0 +1,53 @@
+Problem statement
+You are given a string, ‘S’. You have to tell whether this string is a valid number or not. If the string is valid print 
+“Valid” else print “Invalid” without quotes.
+
+A number is said to be valid if it can be split in the following two components: 
+i) A decimal number or an integer 
+ii) (Optional) An 'e' or 'E', followed by an integer.
+
+A decimal number can be split up into these components (in order): 
+i) (Optional) A sign character (either '+' or '-') 
+ii) One of the following formats: At least one digit, followed by a dot '.' or 
+At least one digit, followed by a dot '.', followed by at least one digit.
+ or A dot '.', followed by at least one digit.
+
+An integer can be split up into these components (in order): 
+i) (Optional) A sign character (either '+' or '-') 
+ii) At least one digit.
+
+Detailed explanation ( Input/output format, Notes, Images )
+Constraints :
+1 <= T <= 5
+0 <= |S| <= 2000
+
+Where ‘T’ denotes the number of test cases and |S| denotes the length of string S
+
+Time Limit: 1 second
+Sample Input 1 :
+3
+35
+.64
+e
+Sample Output 1 :
+Valid
+Valid
+Invalid
+Explanation for Sample Input 1 :
+In test case 1:
+The string is an integer thus it is a valid number.
+
+In test case 2:
+The string a decimal where we have a dot (‘.’) followed by at least an integer thus it is a valid number.
+
+In test case 3:
+The string is not a valid number as before ‘e’ we should have a decimal or an integer and after ‘e’ we should have an integer.
+Sample Input 2 :
+3
+44-
+3.E830
+.631
+Sample Output 2 :
+Invalid
+Valid
+Valid
