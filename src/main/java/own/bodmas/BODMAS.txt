@@ -1,0 +1,86 @@
+Problem Statement: Evaluate Expression Using BODMAS
+
+Given a mathematical expression as a string, evaluate its value following the BODMAS rule (Brackets, Orders, Division and Multiplication, Addition and Subtraction).
+
+BODMAS Rule
+
+B→O→D/M→A/S
+
+Requirements
+The expression may contain:
+Integers and decimal numbers
+Operators: +, -, *, /
+Parentheses: (, )
+Follow operator precedence strictly:
+Brackets ()
+Orders (powers, optional if included)
+Division / and Multiplication * (left to right)
+Addition + and Subtraction - (left to right)
+Input
+
+A string S representing a valid mathematical expression.
+
+Output
+
+Return the computed result as a number.
+
+Examples
+Example 1
+Input:
+S = "3 + 5 * 2"
+
+Output:
+13
+
+Explanation:
+Multiplication first → 5 * 2 = 10
+Then addition → 3 + 10 = 13
+
+Example 2
+Input:
+S = "(3 + 5) * 2"
+
+Output:
+16
+
+Explanation:
+Brackets first → 3 + 5 = 8
+Then multiplication → 8 * 2 = 16
+
+Example 3
+Input:
+S = "10 / 2 + 3 * 4"
+
+Output:
+17
+
+Explanation:
+Division → 10 / 2 = 5
+Multiplication → 3 * 4 = 12
+Addition → 5 + 12 = 17
+
+Example 4 (with decimals)
+Input:
+S = "3.0e-4 + 2"
+
+Output:
+2.0003
+Constraints
+Expression length: up to 10
+5
+No invalid characters
+Division by zero will not occur
+
+With BODMAS precedence
+
+Example 1
+
+2 + 3^2 * 4
+
+Step-by-step:
+
+Orders → 3
+2
+=9
+Multiplication → 9∗4=36
+Addition → 2+36=38
